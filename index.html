@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>Shadow & Speak</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header id="toolbar">
+      <button id="btn-camera" class="toolbar-btn">
+        <span class="icon" aria-hidden="true">📷</span>
+        <span class="label">Take Photo</span>
+      </button>
+      <button id="btn-upload" class="toolbar-btn">
+        <span class="icon" aria-hidden="true">🖼️</span>
+        <span class="label">Upload</span>
+      </button>
+      <input type="file" id="file-input" accept="image/*" capture="environment" hidden>
+    </header>
+    <div id="image-preview" class="hidden">
+      <img id="source-image" alt="Source" loading="lazy">
+      <button id="btn-remove-image" class="small-btn">✕</button>
+    </div>
+    <div id="ocr-status" class="hidden">
+      <div class="spinner"></div>
+      <p>Recognizing text...</p>
+    </div>
+    <main id="sentence-area">
+      <div id="placeholder-message">
+        <p>Take a photo of English text to get started</p>
+      </div>
+    </main>
+    <footer id="control-bar">
+      <button id="btn-record" class="control-btn">
+        <span class="icon" aria-hidden="true">🎤</span>
+        <span class="label">Record</span>
+      </button>
+      <div id="recording-timer" class="hidden">00:00</div>
+      <button id="btn-playback" class="control-btn" disabled>
+        <span class="icon" aria-hidden="true">▶️</span>
+        <span class="label">Replay</span>
+      </button>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
